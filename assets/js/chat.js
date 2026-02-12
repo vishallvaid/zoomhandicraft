@@ -125,4 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto load history on start if box is open or on toggle
     // loadChatHistory(); // User requested not to show history in UI
+
+    // 5. Auto Open Chat after 3 seconds for new visitors
+    setTimeout(() => {
+        const chatBox = document.getElementById("chat-box");
+        if (chatBox && chatBox.style.display !== "flex") {
+            toggleChat();
+        }
+    }, 3000);
 });
